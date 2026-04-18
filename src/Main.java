@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         ExpenseManager manager = new ExpenseManager();
 
-        manager.setExpenses(FileManager.load());
+        manager.setExpenses(CSVManager.importCSV());
 
         while (true) {
             System.out.println("\n1.Add 2.View 3.Update 4.Delete 5.Save 6.Total 7.Export 8.Import 9.Exit");
@@ -61,7 +61,8 @@ public class Main {
                         break;
 
                     case 5:
-                        FileManager.save(manager.getExpenses());
+                        CSVManager.exportCSV(manager.getExpenses());
+
                         break;
 
                     case 6:
