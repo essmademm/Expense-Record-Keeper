@@ -97,7 +97,6 @@ Exported to CSV!
 
 ## Files Used
 
-* data.dat (binary file)
 * expenses.csv (export file)
 
 
