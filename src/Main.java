@@ -32,11 +32,7 @@ public class Main {
                         String cat = sc.next();
 
 
-                        System.out.print("Date (YYYY-MM-DD): ");
-                        String date = sc.next();
-
-
-                        manager.addExpense(new Expense(id, amount, cat, date));
+                        manager.addExpense(new Expense(id, amount, cat));
                         break;
 
 
