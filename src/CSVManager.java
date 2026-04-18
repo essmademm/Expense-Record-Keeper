@@ -20,12 +20,17 @@ public class CSVManager {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-                list.add(new Expense(
-                        Integer.parseInt(data[0]),
-                        Double.parseDouble(data[1]),
-                        data[2]
-                ));
+                // Проверяем, что в строке достаточно данных (минимум 4 поля)
+                if (data.length >= 4) {
+                    list.add(new Expense(
+                            Integer.parseInt(data[0]), // ID
+                            Double.parseDouble(data[1]), // Amount
+                            data[2],                     // Category
+                            data[3]                      // Date
+                    ));
+                }
             }
+
             System.out.println("Imported from CSV!");
         } catch (Exception e) {
             System.out.println("Import error!");

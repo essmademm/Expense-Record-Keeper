@@ -31,8 +31,14 @@ public class Main {
                         System.out.print("Category: ");
                         String cat = sc.next();
 
-                        manager.addExpense(new Expense(id, amount, cat));
+
+                        System.out.print("Date (YYYY-MM-DD): ");
+                        String date = sc.next();
+
+
+                        manager.addExpense(new Expense(id, amount, cat, date));
                         break;
+
 
                     case 2:
                         manager.viewExpenses();
