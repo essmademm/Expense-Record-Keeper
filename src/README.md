@@ -84,4 +84,4 @@ https://github.com/essmademm/Expense-Record-Keeper/commit/a83d3508653888987dd42d
 
 ## Presentation
 ## Presentation
-[View Presentation](https://drive.google.com/file/d/1rg2dn12yHzexp68vavY4i5IAwCknYXA3/view?usp=drive_link)
+[View Presentation](https://drive.google.com/drive/folders/1rdhY6bArHTqwBywHqHbpp6xo2aIjqckc?usp=sharing)
