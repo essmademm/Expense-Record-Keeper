@@ -52,19 +52,34 @@ Apply Input Validation and Error Handling to create a crash-proof application.
 
 ## Chalenges facrd
 * Data Consistency: One of the main challenges was ensuring that when a BusinessExpense is saved, the extra field Company Name is not lost. This was solved by overriding the toCsv() method in the child class Polymorphism.
-* 
+* Ensuring that the company field in BusinessExpense was saved correctly alongside the parent fields was tricky. I solved this by using Method Overriding on the toCsv() method, allowing each object to define its own storage format.
+* Handling non-numeric inputs (like letters instead of an ID) without crashing the program required careful use of Try-Catch blocks and loops to ensure a smooth user experience.
+
 
 
 
 # Test Cases 
-Action	Input Data	Expected Result
-Add Personal	ID: 1, Amount: 100, Type: 1	Expense saved as "Personal"
-Add Business	ID: 2, Amount: 500, Type: 2	Expense saved with "Company Name"
-View All	Press '2'	All records are displayed in the console
-Invalid Input	Amount: "hello"	System shows "Input error!"
-File Export	Press '7'	Data is written to expenses.csv
+1. Adding a Personal Expense
+Input:1, ID: 1, Amount: 150.50, Category: Lunch, Type: 1 (Personal).
+Output: 1 | 150.5 | Lunch | [Current Date] | Personal.
 
-## Files Used
-* expenses.csv (export file)
+3. Business Expense
+Input:1, ID: 2, Amount: 2000, Category: Hardware, Type: 2 (Business), Company: Microsoft.
+Output:2 | 2000.0 | Hardware | [Date] | Business (Microsoft).
+
+4. Data Validation (Error Handling)
+ Input:1,ID:3 Amount:no nunber.
+ Output: The console displays Input error!
+
+5. Updating 
+User Input:3 ID: 1, New Amount: 180.00, New Category: Dinner.
+Output: The system updates the record. Option 2 now shows the new values for ID 1.
+
+
+##  Data Storage
+The project uses the following files for data persistence:
+*   **expenses.csv:** A text-based file used for data export and import. It stores ID, Amount, Category, Date, and Type (Personal/Business) in a comma-separated format compatible with Excel.
+
+
 
 
