@@ -26,7 +26,7 @@ public class ExpenseManager {
         }
     }
 
-    public double getTotal() {   // ← extra для защиты
+    public double getTotal() {
         double sum = 0;
         for (Expense e : expenses) {
             sum += e.getAmount();

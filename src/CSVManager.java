@@ -4,15 +4,16 @@ import java.util.ArrayList;
 public class CSVManager {
 
     public static void exportCSV(ArrayList<Expense> list) {
-        try (PrintWriter pw = new PrintWriter("expenses.csv")) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter("expenses.csv"))) {
             for (Expense e : list) {
-                pw.println(e.getId() + "," + e.getAmount() + "," + e.getCategory());
+                pw.println(e.toCsv());
             }
             System.out.println("Exported to CSV!");
         } catch (Exception e) {
             System.out.println("Export error!");
         }
     }
+
 
     public static ArrayList<Expense> importCSV() {
         ArrayList<Expense> list = new ArrayList<>();
@@ -25,8 +26,8 @@ public class CSVManager {
                     list.add(new Expense(
                             Integer.parseInt(data[0]), // ID
                             Double.parseDouble(data[1]), // Amount
-                            data[2]                     // Category
-
+                            data[2] ,                    // Category
+                            data[3]
                     ));
                 }
             }

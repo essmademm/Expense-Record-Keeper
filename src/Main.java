@@ -19,20 +19,28 @@ public class Main {
                     case 1:
                         System.out.print("ID: ");
                         int id = sc.nextInt();
-
                         System.out.print("Amount: ");
                         double amount = sc.nextDouble();
-
                         if (amount <= 0) {
                             System.out.println("Invalid amount!");
                             break;
                         }
-
                         System.out.print("Category: ");
                         String cat = sc.next();
 
 
-                        manager.addExpense(new Expense(id, amount, cat));
+                        String date = java.time.LocalDate.now().toString();
+
+                        System.out.print("Type (1.Personal 2.Business): ");
+                        int type = sc.nextInt();
+
+                        if (type == 2) {
+                            System.out.print("Company: ");
+                            String comp = sc.next();
+                            manager.addExpense(new BusinessExpense(id, amount, cat, date, comp));
+                        } else {
+                            manager.addExpense(new Expense(id, amount, cat, date));
+                        }
                         break;
 
 
