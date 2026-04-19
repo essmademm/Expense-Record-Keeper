@@ -75,6 +75,8 @@ Output:2 | 2000.0 | Hardware | [Date] | Business (Microsoft).
 User Input:3 ID: 1, New Amount: 180.00, New Category: Dinner.
 Output: The system updates the record. Option 2 now shows the new values for ID 1.
 
+## Screenshots
+https://github.com/essmademm/Expense-Record-Keeper/commit/a83d3508653888987dd42dbeee0d21047225bf7c
 
 ##  Data Storage
 The project uses the following files for data persistence:
