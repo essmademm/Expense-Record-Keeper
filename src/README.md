@@ -7,96 +7,64 @@ Samira Zainalabidin
 
 ## Description
 
-This project is a Java console-based application designed to track personal and business expenses. Users can add, view, update, and delete expense records. The system stores data in files and supports import/export using CSV format.
+The Expense Record Keeper is a Java-based application designed to help users track personal and business expenses. It features a robust Command Line Interface (CLI) that allows users to record, categorize, and manage financial data with permanent storage in CSV files.
 
 ## Objectives
 
-* To create a simple expense tracking system
-* To practice Object-Oriented Programming (OOP)
-* To implement CRUD operations
-* To store and retrieve data from files
-* To demonstrate data import/export
+Implement core OOP principles: Encapsulation, Inheritance, and Polymorphism.
+Develop a CRUD system (Create, Read, Update, Delete) for data management.
+Ensure Data Persistence using file I/O operations (CSV).
+Apply Input Validation and Error Handling to create a crash-proof application.
 
-## Project Requirements List
 
-1. Add new expense
-2. View all expenses
-3. Update existing expense
-4. Delete expense
-5. Save data to file
-6. Load data from file
-7. Input validation
-8. Error handling
-9. CLI menu interface
-10. Import/export CSV
+## Project Requirement List (10 Key Requirements)
 
-## Documentation
+* Add Expense: The system allows users to create new records for personal or business expenses.
+* Display Expenses: Users can view a full list of all recorded expenses in a formatted table.
+* Expense Categorization: Every expense must have a category (e.g., Food, Transport) and a specific type (Personal or Business).
+* Automatic Date Tracking: The system automatically assigns the current date to each new expense using java.time.LocalDate.
+* Update Functionality: Users can modify the amount or category of an existing record using its unique ID.
+* Delete Functionality: The system allows for the removal of specific records from the list by their ID.
+* Data Persistence (CSV): All data is saved to and loaded from a expenses.csv file, ensuring records are kept after closing the app.
+* Input Validation: The system checks for invalid data (e.g., non-numeric values for amount) and prevents program crashes using try-catch blocks.
+* Inheritance Implementation: The project includes a BusinessExpense class that extends the Expense class, adding a field for the company name.
+* Data Export/Import: The application supports exporting the expense list to a standard CSV format that can be opened in Excel or Google Sheets.
 
-### Data Structures
+    
 
-* ArrayList is used to store expense objects.
+# Documentation
 
-### Algorithms
+## 1. Data Structures
+* ArrayList: The core data structure used in the ExpenseManager class. It was chosen because it allows dynamic resizing, making it easy to add or remove expenses without knowing the total count in advance.
+* Polymorphic List: The ArrayList<Expense> stores both Expense (parent) and BusinessExpense (child) objects, demonstrating Java's ability to handle different object types in a single collection.
 
-* Loop is used to search, update, and delete records.
-* File reading/writing for data persistence.
+## 2. Algorithms
+### CRUD Logic:
+* Search: To update or delete an expense, the system iterates through the list using a for loop (or removeIf) to find an object with a matching ID.
+* Summation: The getTotal() method uses an accumulator pattern to sum up the amount field from all objects in the list.
+### CSV Parsing: When importing data, the system reads the file line-by-line, splits each string by a comma (,), and converts the string tokens back into Integer, Double, and String types to reconstruct the objects.  
 
-### Modules / Classes
+### 3. Functions and Modules
+* Main Module: Handles the user interface and menu navigation.
+* ExpenseManager: Acts as the controller, managing the logic for adding, deleting, and updating data.
+* CSVManager: Dedicated module for File I/O operations, ensuring data is correctly formatted for Excel compatibility.
+* Models (Expense/BusinessExpense): Define the data structure and handle self-representation (via display() and toCsv()).
 
-* Expense → stores data
-* BusinessExpense → extends Expense
-* ExpenseManager → manages operations (CRUD)
-* FileManager → handles file saving/loading
-* CSVManager → handles import/export
-* Main → user interface
+## Chalenges facrd
+* Data Consistency: One of the main challenges was ensuring that when a BusinessExpense is saved, the extra field Company Name is not lost. This was solved by overriding the toCsv() method in the child class Polymorphism.
+* 
 
-### Challenges
 
-* Handling file input/output
-* Managing incorrect user input
 
-## Test Cases and Outputs
-
-### Test Case 1: Add Expense
-
-Input:
-1
-ID: 1
-Amount: 100
-Category: Food
-
-Output:
-1 | 100 | Food
-
-### Test Case 2: Update Expense
-
-Input:
-3
-ID: 1
-New amount: 200
-
-Output:
-1 | 200 | Food
-
-### Test Case 3: Delete Expense
-
-Input:
-4
-ID: 1
-
-Output:
-(Expense removed)
-
-### Test Case 4: Export CSV
-
-Input:
-7
-
-Output:
-Exported to CSV!
+# Test Cases 
+Action	Input Data	Expected Result
+Add Personal	ID: 1, Amount: 100, Type: 1	Expense saved as "Personal"
+Add Business	ID: 2, Amount: 500, Type: 2	Expense saved with "Company Name"
+View All	Press '2'	All records are displayed in the console
+Invalid Input	Amount: "hello"	System shows "Input error!"
+File Export	Press '7'	Data is written to expenses.csv
 
 ## Files Used
-
 * expenses.csv (export file)
 
 
