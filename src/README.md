@@ -83,4 +83,5 @@ The project uses the following files for data persistence:
 https://github.com/essmademm/Expense-Record-Keeper/commit/a83d3508653888987dd42dbeee0d21047225bf7c
 
 ## Presentation
-
+## Presentation
+[View Presentation](https://drive.google.com/file/d/1rg2dn12yHzexp68vavY4i5IAwCknYXA3/view?usp=drive_link)
