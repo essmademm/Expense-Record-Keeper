@@ -80,7 +80,8 @@ The project uses the following files for data persistence:
 *   **expenses.csv:** A text-based file used for data export and import. It stores ID, Amount, Category, Date, and Type (Personal/Business) in a comma-separated format compatible with Excel.
 
 ## Screenshots
-https://github.com/essmademm/Expense-Record-Keeper/commit/a83d3508653888987dd42dbeee0d21047225bf7c
+[View screenshots](https://drive.google.com/drive/folders/1fnpDpovEmxCsOurcoCAGGxNRuH2IRMwP?usp=drive_link)
+
 
 ## Presentation
 [View Presentation](https://drive.google.com/drive/folders/1rdhY6bArHTqwBywHqHbpp6xo2aIjqckc?usp=sharing)
