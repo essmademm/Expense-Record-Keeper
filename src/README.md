@@ -52,8 +52,10 @@ Apply Input Validation and Error Handling to create a crash-proof application.
 
 ## Chalenges facrd
 * Data Consistency: One of the main challenges was ensuring that when a BusinessExpense is saved, the extra field Company Name is not lost. This was solved by overriding the toCsv() method in the child class Polymorphism.
-* Ensuring that the company field in BusinessExpense was saved correctly alongside the parent fields was tricky. I solved this by using Method Overriding on the toCsv() method, allowing each object to define its own storage format.
+* Designing the menu and ensuring that all operations (add, update, delete) work correctly together required careful planning and testing.
+* Connecting Multiple Classes: It was difficult to organize how different classes (Main, ExpenseManager, CSVManager) interact with each other. I solved this by clearly separating responsibilities between classes.
 * Handling non-numeric inputs (like letters instead of an ID) without crashing the program required careful use of Try-Catch blocks and loops to ensure a smooth user experience.
+* Initially, it was difficult to understand how inheritance and polymorphism work in practice. I improved this by applying them in my project.
 
 
 
